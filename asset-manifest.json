@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/michiganmadetruckingllc/static/css/main.073c9b0a.css",
+    "main.js": "/michiganmadetruckingllc/static/js/main.b24ebbea.js",
+    "static/js/787.dcdebc45.chunk.js": "/michiganmadetruckingllc/static/js/787.dcdebc45.chunk.js",
+    "static/media/logo.svg": "/michiganmadetruckingllc/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/michiganmadetruckingllc/index.html",
+    "main.073c9b0a.css.map": "/michiganmadetruckingllc/static/css/main.073c9b0a.css.map",
+    "main.b24ebbea.js.map": "/michiganmadetruckingllc/static/js/main.b24ebbea.js.map",
+    "787.dcdebc45.chunk.js.map": "/michiganmadetruckingllc/static/js/787.dcdebc45.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.b24ebbea.js"
+  ]
+}
