@@ -46,6 +46,11 @@ const Navbar = () => {
         display: none;
       }
     `,
+    listBtn: css`
+      .Mui-selected {
+        background: green;
+      }
+    `,
     listText: css`
       font-weight: 300;
       font-size: 1.2rem;
@@ -53,6 +58,7 @@ const Navbar = () => {
     burger: css`
       color: black;
       display: none;
+
       @media (max-width: 750px) {
         display: inline;
       }
@@ -60,9 +66,14 @@ const Navbar = () => {
   };
 
   const [open, setOpen] = useState(false);
-
+  const [selected, setSelcted] = useState(false);
   const handleDrawerToggle = () => {
     setOpen(!open);
+  };
+
+  const handleBtn = (e) => {
+    console.log(e);
+    setSelcted(true);
   };
 
   return (
@@ -85,10 +96,14 @@ const Navbar = () => {
               </Typography>
             </Box>
             <List sx={styles.list}>
-              {["About", "Services", "Contact"].map((item) => {
+              {["About", "Services", "Contact"].map((item, index) => {
                 return (
                   <ListItem sx={{ display: { xs: "none", sm: "block" } }}>
-                    <ListItemButton>
+                    <ListItemButton
+                      selected={true}
+                      sx={styles.listBtn}
+                      onClick={handleBtn}
+                    >
                       <Typography sx={styles.listText}>{item}</Typography>
                     </ListItemButton>
                   </ListItem>
