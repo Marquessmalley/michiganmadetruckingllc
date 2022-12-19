@@ -23,9 +23,12 @@ const landing = () => {
       font-size: 24px;
       color: #fff;
       text-align: center;
+      font-weight: bold;
     `,
     paraText: css`
       color: #fff;
+      text-align: center;
+      margin-top: 5px;
     `,
     imgContainer: css`
       flex: 1;
@@ -34,7 +37,7 @@ const landing = () => {
       align-items: center;
     `,
   };
-  console.log(window.innerWidth);
+
   return (
     <Box sx={styles.landingContainer}>
       <Box sx={styles.leftContainer}>
@@ -42,7 +45,8 @@ const landing = () => {
           Welcome to Michigan Made Trucking!
         </Typography>
         <Typography sx={styles.paraText}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing.
+          Here at Michigan Made Trucking LLC we treat everyone with the respect
+          you deserve
         </Typography>
       </Box>
 
