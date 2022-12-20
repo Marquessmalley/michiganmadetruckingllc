@@ -20,15 +20,20 @@ const landing = () => {
       align-items: center;
     `,
     headerText: css`
-      font-size: 24px;
+      font-size: 34px;
       color: #fff;
       text-align: center;
       font-weight: bold;
     `,
     paraText: css`
+      font-size: 20px;
       color: #fff;
       text-align: center;
-      margin-top: 5px;
+      margin-top: 15px;
+      font-weight: 100;
+      @media (max-width: 600px) {
+        width: 80%;
+      }
     `,
     imgContainer: css`
       flex: 1;
@@ -46,7 +51,7 @@ const landing = () => {
         </Typography>
         <Typography sx={styles.paraText}>
           Here at Michigan Made Trucking LLC we treat everyone with the respect
-          you deserve
+          they deserve
         </Typography>
       </Box>
 

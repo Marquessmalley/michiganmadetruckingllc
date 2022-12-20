@@ -12,12 +12,18 @@ import {
   Drawer,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import { css } from "@emotion/react";
+import MMT from "../../../assets/MMT.svg";
+import altLogo from "../../../assets/altLogo.svg";
 const Navbar = () => {
   const styles = {
     container: css`
       display: flex;
       align-items: center;
+      @media (max-width: 750px) {
+        text-align: center;
+      }
     `,
     logo: css`
       flex: 1;
@@ -25,7 +31,6 @@ const Navbar = () => {
     logoText: css`
       font-size: 1.5rem;
       font-weight: bold;
-      color: black;
       @media (max-width: 768px) {
         white-space: nowrap;
       }
@@ -41,7 +46,7 @@ const Navbar = () => {
     `,
     list: css`
       display: flex;
-      color: black;
+      color: #fff;
       @media (max-width: 750px) {
         display: none;
       }
@@ -53,10 +58,10 @@ const Navbar = () => {
     `,
     listText: css`
       font-weight: 300;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     `,
     burger: css`
-      color: black;
+      color: #fff;
       display: none;
 
       @media (max-width: 750px) {
@@ -76,9 +81,11 @@ const Navbar = () => {
     setSelcted(true);
   };
 
+  const drawerWidth = 200;
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="sticky" sx={{ background: "#fff" }}>
+      <AppBar position="sticky" sx={{ background: "#00004D" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -86,19 +93,26 @@ const Navbar = () => {
             edge="start"
             onClick={handleDrawerToggle}
             sx={styles.burger}
+            size="large"
           >
-            <MenuIcon />
+            <MenuIcon fontSize="large" />
           </IconButton>
           <Container sx={styles.container}>
             <Box sx={{ flexGrow: 1, display: { lg: "block" } }}>
-              <Typography sx={styles.logoText}>
-                Michigan Made Trucking
-              </Typography>
+              <img
+                src={MMT}
+                alt="michigan made trucking"
+                width="100"
+                height="75"
+              />
             </Box>
             <List sx={styles.list}>
               {["About", "Services", "Contact"].map((item, index) => {
                 return (
-                  <ListItem sx={{ display: { xs: "none", sm: "block" } }}>
+                  <ListItem
+                    key={index}
+                    sx={{ display: { xs: "none", sm: "block" } }}
+                  >
                     <ListItemButton
                       selected={true}
                       sx={styles.listBtn}
@@ -113,11 +127,43 @@ const Navbar = () => {
           </Container>
         </Toolbar>
       </AppBar>
-      <Drawer open={open} onClose={handleDrawerToggle}>
-        <List>
-          {["About", "Services", "Contact"].map((item) => {
+      <Drawer
+        open={open}
+        onClose={handleDrawerToggle}
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          "& .MuiDrawer-paper": {
+            width: drawerWidth,
+            boxSizing: "border-box",
+            background: "#D6D6D6",
+            fontSize: "1.5rem",
+            fontWeight: "500",
+          },
+        }}
+      >
+        <CloseIcon sx={{ cursor: "pointer" }} />
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <img src={altLogo} alt="michigan made trucking" width="400" />
+        </Box>
+
+        <List
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {["About", "Services", "Contact"].map((item, index) => {
             return (
-              <ListItem>
+              <ListItem key={index} sx={{}}>
                 <ListItemButton>{item}</ListItemButton>
               </ListItem>
             );
