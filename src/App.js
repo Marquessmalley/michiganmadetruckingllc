@@ -1,18 +1,22 @@
 import Navbar from "./components/layout/Navbar/Navbar";
+import Subheader from "./components/layout/subheader/Subheader";
 import Landing from "./components/sections/landing/Landing";
+import About from "./components/sections/about/About";
 import { css } from "@emotion/react";
 import { Box, Typography } from "@mui/material";
 function App() {
   const styles = {
     app: css`
       background: rgb(0, 0, 77, 0.9);
-      height: 100vh;
+      height: 190vh;
     `,
   };
   return (
     <Box sx={styles.app}>
       <Navbar />
       <Landing />
+      <Subheader title="About" />
+      <About />
     </Box>
   );
 }
