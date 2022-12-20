@@ -11,8 +11,8 @@ function App() {
     app: css`
       background: rgb(0, 0, 77, 0.9);
       height: 275vh;
-      @media (max-width: 750px) {
-        height: 320vh;
+      @media (max-width: 600px) {
+        height: 330vh;
       }
     `,
   };
