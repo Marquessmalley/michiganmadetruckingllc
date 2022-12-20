@@ -7,6 +7,7 @@ const About = () => {
       width: 80vw;
       margin: auto;
       margin-top: 50px;
+      margin-bottom: 50px;
     `,
     text: css`
       font-size: 20px;
@@ -14,7 +15,7 @@ const About = () => {
     `,
   };
   return (
-    <Box sx={styles.about}>
+    <Box id="about" sx={styles.about}>
       <Typography sx={styles.text}>
         Michigan Made trucking LLC was created by myself after being a driver
         for many years for other companies and still felt as if I wasn’t where I
