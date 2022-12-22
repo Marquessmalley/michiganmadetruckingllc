@@ -10,9 +10,9 @@ function App() {
   const styles = {
     app: css`
       background: rgb(0, 0, 77, 0.9);
-      height: 275vh;
+      /* height: 275vh; */
       @media (max-width: 600px) {
-        height: 350vh;
+        height: 425vh;
       }
     `,
   };
@@ -20,12 +20,18 @@ function App() {
     <Box sx={styles.app}>
       <Navbar />
       <Landing />
-      <Subheader title="About" />
-      <About />
-      <Subheader title="What we're looking for?" />
-      <Service />
-      <Subheader title="Contact" />
-      <Contact />
+      <section id="About">
+        <Subheader title="About" />
+        <About />
+      </section>
+      <section id="Services">
+        <Subheader title="What we're looking for?" />
+        <Service />
+      </section>
+      <section id="Contact">
+        <Subheader title="Contact" />
+        <Contact />
+      </section>
     </Box>
   );
 }

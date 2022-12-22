@@ -6,6 +6,7 @@ import {
   Typography,
   List,
   ListItem,
+  Link,
   ListItemButton,
   Container,
   IconButton,
@@ -60,6 +61,10 @@ const Navbar = () => {
       font-weight: 300;
       font-size: 1.3rem;
     `,
+    link: css`
+      color: #fff;
+      text-decoration: none;
+    `,
     burger: css`
       color: #fff;
       display: none;
@@ -82,6 +87,10 @@ const Navbar = () => {
   };
 
   const drawerWidth = 200;
+
+  const closeDrawer = () => {
+    setOpen(false);
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -107,10 +116,14 @@ const Navbar = () => {
               />
             </Box>
             <List sx={styles.list}>
-              {["About", "Services", "Contact"].map((item, index) => {
+              {[
+                { id: 1, name: "About", to: "#About" },
+                { id: 2, name: "Services", to: "#Services" },
+                { id: 3, name: "Contact", to: "#Contact" },
+              ].map((item, index) => {
                 return (
                   <ListItem
-                    key={index}
+                    key={item.id}
                     sx={{ display: { xs: "none", sm: "block" } }}
                   >
                     <ListItemButton
@@ -118,7 +131,11 @@ const Navbar = () => {
                       sx={styles.listBtn}
                       onClick={handleBtn}
                     >
-                      <Typography sx={styles.listText}>{item}</Typography>
+                      <Link href={item.to} sx={styles.link}>
+                        <Typography sx={styles.listText}>
+                          {item.name}
+                        </Typography>
+                      </Link>
                     </ListItemButton>
                   </ListItem>
                 );
@@ -142,7 +159,7 @@ const Navbar = () => {
           },
         }}
       >
-        <CloseIcon sx={{ cursor: "pointer" }} />
+        <CloseIcon sx={{ cursor: "pointer" }} onClick={closeDrawer} />
 
         <Box
           sx={{
@@ -161,10 +178,18 @@ const Navbar = () => {
             alignItems: "center",
           }}
         >
-          {["About", "Services", "Contact"].map((item, index) => {
+          {[
+            { id: 1, name: "About", to: "#About" },
+            { id: 2, name: "Services", to: "#Services" },
+            { id: 3, name: "Contact", to: "#Contact" },
+          ].map((item, index) => {
             return (
-              <ListItem key={index} sx={{}}>
-                <ListItemButton>{item}</ListItemButton>
+              <ListItem key={index}>
+                <ListItemButton>
+                  <Link href={item.to} sx={styles.link}>
+                    <Typography sx={styles.listText}>{item.name}</Typography>
+                  </Link>
+                </ListItemButton>
               </ListItem>
             );
           })}

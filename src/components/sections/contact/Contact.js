@@ -8,6 +8,7 @@ const Contact = () => {
       width: 50vw;
       margin: auto;
       margin-top: 50px;
+      background: rgb(0, 0, 77, 0.9);
       @media (max-width: 750px) {
         width: 90vw;
       }

@@ -1,17 +1,32 @@
 import React from "react";
 import { css } from "@emotion/react";
 import { Box, Typography } from "@mui/material";
+import truck1 from "../../../assets/truck1.png";
 const About = () => {
   const styles = {
     about: css`
-      width: 80vw;
       margin: auto;
       margin-top: 50px;
       margin-bottom: 50px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      @media (max-width: 1100px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     `,
     text: css`
+      width: 50vw;
       font-size: 20px;
       color: #fff;
+      text-align: justify;
+      @media (max-width: 1100px) {
+        margin-bottom: 3rem;
+        width: 80vw;
+      }
     `,
   };
   return (
@@ -27,6 +42,7 @@ const About = () => {
         experienced, down to earth, hardworking, honest partner in this
         dog-eat-dog world of trucking, give me a call.
       </Typography>
+      <img src={truck1} alt="truck" width="400" height="400" />
     </Box>
   );
 };
