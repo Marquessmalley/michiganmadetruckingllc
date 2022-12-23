@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Button, Link } from "@mui/material";
 import { css } from "@emotion/react";
 import MMT from "../../../assets/MMT.svg";
 const landing = () => {
@@ -41,6 +41,21 @@ const landing = () => {
       justify-content: center;
       align-items: center;
     `,
+    link: css`
+      margin-top: 3rem;
+      padding: 1rem;
+      width: 150px;
+      color: #fff;
+      background: blue;
+      border-radius: 25px;
+      text-decoration: none;
+      background: #00004d;
+    `,
+    text: css`
+      font-size: 20px;
+      text-align: center;
+      color: #fff;
+    `,
   };
 
   return (
@@ -53,6 +68,9 @@ const landing = () => {
           Here at Michigan Made Trucking LLC we treat everyone with the respect
           they deserve
         </Typography>
+        <Link href="tel:+6164664080" sx={styles.link}>
+          <Typography sx={styles.text}>Contact Us</Typography>
+        </Link>
       </Box>
 
       <Box sx={styles.imgContainer}>
